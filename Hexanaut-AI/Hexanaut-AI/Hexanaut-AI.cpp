@@ -1,7 +1,21 @@
 #include <SFML/Graphics.hpp>
 
+//import Hexanaut;
+import Z;
+
 int main()
 {
+    CA ca;
+    CA* asdf = &ca;
+    // CB cb{& ca};
+    //ca.MyFunc(cb);
+
+    //HexanautGame game{ 2, 10 };
+    //Player p;
+    //while (!game.step())
+    //    ;
+    
+    
     sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);

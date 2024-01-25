@@ -18,5 +18,8 @@
     <ClCompile Include="Hexanaut-AI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="A.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
