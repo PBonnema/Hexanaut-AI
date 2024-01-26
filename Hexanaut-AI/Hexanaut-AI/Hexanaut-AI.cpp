@@ -1,13 +1,10 @@
 #include <SFML/Graphics.hpp>
 
 import Hexanaut;
-import A;
 
 int main()
 {
-
     HexanautGame game{ 2, 10 };
-    Player p;
     while (!game.step())
         ;
         

@@ -3,7 +3,8 @@ module;
 #include <vector>
 #include <memory>
 
-module Hexanaut;
+module Hexanaut:Game;
+import :Game;
 
 import :GameState;
 import :Player;
