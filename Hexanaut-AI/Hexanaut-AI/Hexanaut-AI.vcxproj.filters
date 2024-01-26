@@ -21,5 +21,41 @@
     <ClCompile Include="A.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="A-C.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A-C.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A-B.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A-B.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A-fwddecl.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hexanaut-fwddecl.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hexanaut-GameState.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hexanaut-Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hexanaut-Player.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hexanaut-PlayerMove.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hexanaut.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hexanaut.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

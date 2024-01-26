@@ -1,10 +1,10 @@
+module;
+
+#include <vector>
 
 export module Hexanaut:GameState;
 
-import std;
-// import :Player;
-
-class Player;
+import :fwddecl;
 
 // The game state is immutable.
 export struct GameState {

@@ -1,15 +1,12 @@
+module;
+
+#include <memory>
+
 export module Hexanaut;
 
-import std;
-
-// export import :GameState;
-// export import :Player;
-// export import :PlayerMove;
-// export import :Position;
-
-struct PlayerMove;
-struct GameState;
-class Player;
+export import :GameState;
+export import :Player;
+export import :PlayerMove;
 
 export class HexanautGame {
 public:
@@ -23,5 +20,3 @@ private:
     std::unique_ptr<GameState> game_state_;
     double player_speed_;
 };
-
-module : private;

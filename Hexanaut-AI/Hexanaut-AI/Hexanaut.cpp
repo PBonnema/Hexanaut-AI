@@ -1,13 +1,16 @@
-module Hexanaut;
+module;
 
-import std;
+#include <vector>
+#include <memory>
+
+module Hexanaut;
 
 import :GameState;
 import :Player;
 import :PlayerMove;
-//import :Position;
+import :Position;
 
-HexanautGame::HexanautGame(const int player_count, const double player_speed):
+HexanautGame::HexanautGame(const int player_count, const double player_speed) :
     game_state_{ std::make_unique<GameState>(std::vector<Player>(player_count)) },
     player_speed_{ player_speed }
 {
