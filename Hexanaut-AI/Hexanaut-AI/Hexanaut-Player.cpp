@@ -1,11 +1,13 @@
-﻿module Hexanaut:Player;
+﻿module;
+
+#include <complex>
+
+module Hexanaut:Player;
 import :Player;
 
 import :GameState;
 import :PlayerMove;
 import :Position;
-
-import std;
 
 Player::Player(): position_{ }
 {
@@ -23,7 +25,6 @@ PlayerMove Player::choose_move(const GameState& game_state) const
 
 Player Player::move(double speed, double direction) const
 {
-    // Calculate delta vector
-    // Add delta vector to position
-    return Player{ Position{ 1, 1 } };
+    const Position delta{ std::cos(direction) * speed, std::sin(direction) * speed };
+    return Player{ Position{ position_[0] + delta[0], position_[1] + delta[1] } };
 }
