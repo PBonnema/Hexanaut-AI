@@ -25,6 +25,8 @@ bool HexanautGame::step()
     std::vector<Player> moved_players;
     for (const auto& player : game_state_->players)
     {
+        // TODO, give the player a copy of the game state with limited visibility (his screen). Screensize depends on speed.;
+        // TODO Spatial query; everything within rectangle. Cuts off polygons.
         PlayerMove move = player.choose_move(*game_state_);
         move.turn_angle_degrees = clamp_turn_angle(move.turn_angle_degrees, turn_speed_degrees_);
         moved_players.emplace_back(player.move(player_speed_, move.turn_angle_degrees));
@@ -41,28 +43,29 @@ std::unique_ptr<GameState> HexanautGame::resolve_player_movement(
     const GameState& game_state,
     const std::vector<Player>& moved_players)
 {
-    // Player radius??
+    // First, update the tree with all movements: player position has changed
+    // Player radius/hitbox??
 
     
-    // Resolve player-boundary collisions
+    // Resolve player-boundary collisions; Just bounds checking
         // Means updating player direction
-    // Resolve player exiting their territory
-        // Means starting a capture = start a tail
-    // Resolve player entering their territory
+    // Resolve player exiting their territory; Spatial query; Line (player movement) intersecting some polygon boundary
+        // Means starting a capture = start a tail; Update the tree
+    // Resolve player entering their territory; Spatial query; Line (player movement) intersecting some polygon boundary
         // Means ending a capture = ending a tail
-        // Player gains new territory
+        // Player gains new territory; Spatial query if doing cells. Otherwise, just merge polygon of the tail into territory polygon.
             // Player increase level/speed
-        // Other players might lose territory
+        // Other players might lose territory; Spatial query if doing cells. Otherwise, just merge polygon of the tail into territory polygon.
             // Players lose level/speed
-    // Extend the tail if still outside of territory
-    // Resolve player-player collisions
+    // Extend the tail if still outside of territory; Update the tree
+    // Resolve player-player collisions; Spatial query; Line intersecting any of other lines (player movement)
         // Means both players die and their territory and tails disappear
-    // Resolve player-tail collisions
+    // Resolve player-tail collisions; Spatial query; Line (player movement) intersecting some polygon boundary
         // means 1 player dies
-        // The other player gets a portion of his terrain in a certain radius
-    // Check end game condition
+        // The other player gets a portion of his terrain in a certain radius; Spatial query; Get all polygons in a certain large area. Also query for cells if doing cells.
+    // Check end game condition; Spatial query... sort of. Counting number of cells or total area of territory.
 
-    // If a player dies, take note of the step number and territory size and update his state to dead.
+    // If a player dies, take note of the step number and territory size and update his state to dead.; Spatial query... sort of
 
     // TODO what if a tail collision happens in the same step the capture finishes?
         // By ordering the actions as above, the player capturing wins
