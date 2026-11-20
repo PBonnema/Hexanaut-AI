@@ -4,4 +4,6 @@ export struct PlayerMove;
 export struct GameState;
 export class Player;
 export class HexanautGame;
-export class Game;
+export struct Position;
+export class PolyLine;
+export struct PlayerPolyLineRTreeEntry;

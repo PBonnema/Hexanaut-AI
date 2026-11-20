@@ -1,19 +1,29 @@
+module;
+
+#include <optional>
+
 export module Hexanaut:Player;
 
 import :fwddecl;
 import :Position;
+import :PolyLine;
 
-// Represents a player. This class is part of the game state and is immutable.
+// Represents a player. This class is part of the game state.
 export class Player {
 public:
-    Player();
-    explicit Player(const Position& position);
+    explicit Player(const Position& position, double direction_radians);
 
     PlayerMove choose_move(const GameState& game_state) const;
 
-    // Returns a copy of the player that has moved at the given speed along the given direction relative to this player's position.
-    Player move(double speed, double direction) const;
+    // Moves the player at the given speed along the given direction relative to it's current position.
+    PolyLine move(double speed, double direction_radians, const Position& map_size);
+
+    std::optional<Position> check_exited_own_territory() const;
+    Position get_position() const;
 
 private:
-    const Position position_;
+    Position position_;
+    double direction_radians_;
+    PolyLine territory_border_;
+    std::optional<PolyLine> tail_;
 };

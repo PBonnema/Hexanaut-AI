@@ -5,3 +5,4 @@ export import :Player;
 export import :PlayerMove;
 export import :Game;
 export import :Position;
+export import :PolyLine;
